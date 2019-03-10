@@ -1,11 +1,13 @@
 package nadeem.springframework.ndpetclinic.model;
 
-import sun.util.resources.LocaleData;
+
+
+import java.time.LocalDate;
 
 public class Pet {
     private  PetType petType;
     private Owner owner;
-    private LocaleData birthDate;
+    private LocalDate birthDate;
 
     public PetType getPetType() {
         return petType;
@@ -23,11 +25,11 @@ public class Pet {
         this.owner = owner;
     }
 
-    public LocaleData getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocaleData birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 }
