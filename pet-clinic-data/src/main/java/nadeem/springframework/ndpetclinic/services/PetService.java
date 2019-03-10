@@ -11,4 +11,6 @@ public interface PetService {
     Pet save(Pet pet);
 
     Set<Pet> findAll();
+
+    //remaining
 }
