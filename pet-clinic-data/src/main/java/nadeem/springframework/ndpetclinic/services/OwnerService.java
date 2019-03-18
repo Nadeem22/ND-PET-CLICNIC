@@ -2,15 +2,13 @@ package nadeem.springframework.ndpetclinic.services;
 
 import nadeem.springframework.ndpetclinic.model.Owner;
 
-import java.util.Set;
-
-public interface OwnerService {
+public interface OwnerService extends CrudService<Owner,Long>{
 
     Owner findByLastName(String lastName);
 
-   Owner findById(long id);
+  /* Owner findById(long id);
 
    Owner save(Owner owner);
 
-   Set<Owner> findAll();
+   Set<Owner> findAll();*/
 }
