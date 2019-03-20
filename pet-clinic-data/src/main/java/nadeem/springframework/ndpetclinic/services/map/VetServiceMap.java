@@ -1,11 +1,12 @@
 package nadeem.springframework.ndpetclinic.services.map;
 
 import nadeem.springframework.ndpetclinic.model.Vet;
-import nadeem.springframework.ndpetclinic.services.CrudService;
+import nadeem.springframework.ndpetclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
-public class VetServiceMap extends AbstractMapService<Vet,Long> implements CrudService<Vet,Long> {
+@Service
+public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
