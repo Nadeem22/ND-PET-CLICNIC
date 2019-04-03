@@ -2,10 +2,12 @@ package nadeem.springframework.ndpetclinic.services.map;
 
 import nadeem.springframework.ndpetclinic.model.Visit;
 import nadeem.springframework.ndpetclinic.services.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 @Service
+@Profile({"default","map"})
 public class VisitMapService extends AbstractMapService<Visit,Long> implements VisitService {
     @Override
     public Set<Visit> findAll() {
@@ -24,7 +26,11 @@ public class VisitMapService extends AbstractMapService<Visit,Long> implements V
 
     @Override
     public Visit save(Visit visit) {
-        if(visit.getPet()==null|| visit.getPet().getOwner()==null|| visit.getPet().getId()==null|| visit.getPet().getOwner().getId()==null){
+
+        System.out.println("Pet" +visit.getPet()+" PetOwner" +visit.getPet().getOwner()+"Pet Id" +visit.getPet().getId()+" pet Owner Id" +visit.getPet().getOwner().getId());
+
+        if(visit.getPet()==null|| visit.getPet().getOwner()==null|| visit.getPet().getOwner().getId()==null){
+            System.out.println("In Exception");
             throw new RuntimeException("Invalid Visit");
         }
         return super.save(visit);
